@@ -1,0 +1,1 @@
+Get-ItemProperty -Path HKLM:\HARDWARE\DESCRIPTION\System\BIOS
