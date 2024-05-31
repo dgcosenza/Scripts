@@ -250,6 +250,6 @@ echo "${YELLOW}Updating WordPress Settings${NOCOLOR}"
 echo ""
 
 cd ../wordpress_megaron
-sudo docker-compose stop && sudo docker rm wordpress_megaron && sudo docker rm mariadb5 && sudo docker-compose up ->
+sudo docker-compose stop && sudo docker rm wordpress_megaron && sudo docker rm mariadb5 && sudo docker-compose up -d --remove-orphans
 
 cd /home/fnxusa/
