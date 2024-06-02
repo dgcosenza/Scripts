@@ -1,0 +1,29 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Transmission
+# -----------------------------------------------------------------------------------------------------
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmission
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Argentina/Buenos_Aires
+      - TRANSMISSION_WEB_HOME= #optional
+      - USER=fnxusa #optional
+      - PASS=${PASSWORD} #optional
+      - WHITELIST= #optional
+      - PEERPORT= #optional
+      - HOST_WHITELIST= #optional
+    volumes:
+      - ./config:/config
+      - ./downloads:/downloads
+      - ./watch:/watch
+    ports:
+      - 9051:9091
+      - 51483:51413
+      - 51483:51413/udp
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
