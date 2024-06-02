@@ -1,0 +1,23 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Plex Media Server
+# -----------------------------------------------------------------------------------------------------
+  plex:
+    image: plexinc/pms-docker:latest
+    container_name: plex
+    restart: unless-stopped
+    volumes:
+      - ./config:/config/Library/Application Support/Plex Media Server/
+      - ./tmp:/tmp
+      - ./Media/Movies:/media/Movies
+      - ./Media/TV Shows:/media/TV Shows
+      - ./Media/Anime:/media/Anime
+      - ./Media/Animation:/media/Animation
+      - ./Media/American_Anime:/media/American_Anime
+    expose:
+      - 32400
+      - 33400
+    hostname: server
+    network_mode: "host"
+# -----------------------------------------------------------------------------------------------------
