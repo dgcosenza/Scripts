@@ -1,22 +1,25 @@
+# --------------------------------------------------------------------------
+# This Python script presents a menu for launching various tools, including updaters, cleaners, and fixers.
+# Users can select options by entering corresponding numbers.
+# --------------------------------------------------------------------------
 import os
 
-# Solicitar al usuario el directorio en el que desea ejecutar el comando
+# Ask the user for the directory in which they want to execute the command
 print("")
 
-directory = input("Por favor, ingresa la carpeta en la que deseas ejecutar el comando: ")
-
-print("")
-
-# Confirmar con el usuario si desea eliminar los archivos ._* y .DS_Store
-confirmation = input("¿Estás seguro de que deseas eliminar los archivos ._* y .DS_Store? (si/no): ")
+directory = input("Please enter the folder in which you want to execute the command: ")
 
 print("")
 
-if confirmation.lower() == "si":
-    # Construir y ejecutar el comando find y rm
+# Confirm with the user if they want to delete the ._* and .DS_Store files
+confirmation = input("Are you sure you want to delete the ._* and .DS_Store files? (yes/no): ")
+
+print("")
+
+if confirmation.lower() == "yes":
+    # Build and execute the find and rm command
     find_command = f"sudo find {directory} -type f -name '._*' -exec rm {{}} \\; && sudo find {directory} -type f -name '.DS_Store' -exec rm {{}} \\;"
     os.system(find_command)
-    print("Archivos ._* y .DS_Store eliminados con éxito.")
+    print("._* and .DS_Store files successfully deleted.")
 else:
-    print("El comando no se ejecutó. Has seleccionado 'no'.")
-
+    print("The command was not executed. You have selected 'no'.")
