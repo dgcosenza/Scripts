@@ -18,5 +18,5 @@ services:
       - ./downloads:/downloads
     ports:
       - 9117:9117
-    network_mode: "nginx-proxy-manager_npm" 
+    network_mode: "nginx-proxy-manager_npm"
 # -----------------------------------------------------------------------------------------------------
