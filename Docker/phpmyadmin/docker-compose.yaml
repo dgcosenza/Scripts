@@ -1,0 +1,39 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# phpMyAdmin
+# -----------------------------------------------------------------------------------------------------
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: unless-stopped
+    environment:
+#      - PMA_ABSOLUTE_URI=https://phpmyadmin.fnxlabs-server.net.ar/
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mariadb2
+      - UPLOAD_LIMIT=512M
+#    volumes:
+#      - ./sessions:/sessions
+    ports:
+      - 7790:80
+#      - 4490:443
+    links:
+      - mariadb2
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
+# phpMyAdmin MariaDB
+# -----------------------------------------------------------------------------------------------------
+  mariadb2:
+    image: mariadb:latest
+    container_name: mariadb2
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=testingpassword
+      - MYSQL_PASSWORD=testingpassword
+      - MYSQL_DATABASE=php_sql_db
+      - MYSQL_USER=fnxusa
+      - ALLOW_EMPTY_PASSWORD=no
+    volumes:
+      - ./mysql:/var/lib/mysql
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
