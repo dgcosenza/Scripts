@@ -1,0 +1,22 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Jackett
+# -----------------------------------------------------------------------------------------------------
+  jackett:
+    image: lscr.io/linuxserver/jackett:latest
+    container_name: jackett
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Argentina/Buenos_Aires
+      - AUTO_UPDATE=true #optional
+      - RUN_OPTS= #optional
+    volumes:
+      - ./config:/config
+      - ./downloads:/downloads
+    ports:
+      - 9117:9117
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
