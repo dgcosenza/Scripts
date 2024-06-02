@@ -1,0 +1,29 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Chromium
+# -----------------------------------------------------------------------------------------------------
+  chromium:
+    image: lscr.io/linuxserver/chromium:latest
+    container_name: chromium
+    restart: unless-stopped
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Argentina/Buenos_Aires
+      - CHROME_CLI=https://start.duckduckgo.com/ #optional
+      - DRINODE=/dev/dri/renderD128
+      - CUSTOM_USER=fnxusa
+      - PASSWORD=${PASSWORD}
+    volumes:
+      - ./config:/config
+    ports:
+      - 30002:3000
+      - 30012:3001
+    shm_size: "2gb"
+    devices:
+      - /dev/dri:/dev/dri
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------

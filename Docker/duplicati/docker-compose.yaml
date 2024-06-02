@@ -1,0 +1,23 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Duplicati
+# -----------------------------------------------------------------------------------------------------
+  duplicati:
+    image: linuxserver/duplicati:latest
+    container_name: duplicati
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Argentina/Buenos_Aires
+#      - CLI_ARGS=--webservice-sslcertificatefile=/config/certs/origin.crt.pem
+    volumes:
+#      - ./config/certs:/certs
+      - ./config:/config
+      - ./backups:/backups
+      - ./source:/source
+    ports:
+      - 8200:8200
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------

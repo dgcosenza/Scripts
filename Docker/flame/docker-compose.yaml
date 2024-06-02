@@ -1,0 +1,26 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Flame
+# -----------------------------------------------------------------------------------------------------
+  flame:
+    image: pawelmalak/flame:latest
+    container_name: flame
+    restart: unless-stopped
+    environment:
+      - PASSWORD=flame_password
+      - PASSWORD_FILE=/run/secrets/password # optional but required for (1)
+    volumes:
+      - ./data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock # optional but required for Docker integration
+    ports:
+      - 5005:5005
+    secrets:
+      - password # optional but required for (1)
+    network_mode: "nginx-proxy-manager_npm"
+
+# optional but required for Docker secrets (1)
+secrets:
+  password:
+    file: ./secrets/password
+# -----------------------------------------------------------------------------------------------------

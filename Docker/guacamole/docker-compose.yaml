@@ -1,0 +1,20 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Guacamole
+# -----------------------------------------------------------------------------------------------------
+  guacamole:
+    image: abesnier/guacamole:latest
+    container_name: guacamole
+    restart: unless-stopped
+    user: root
+    environment:
+      - TZ=America/Argentina/Buenos_Aires
+      - EXTENSIONS=auth-totp, history-recording-storage
+      - GUACD_LOG_LEVEL=info
+    volumes:
+      - ./config:/config
+    ports:
+      - 8090:8080
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------

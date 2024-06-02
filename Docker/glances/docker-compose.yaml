@@ -1,0 +1,19 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Glances
+# -----------------------------------------------------------------------------------------------------
+  glances:
+    image: nicolargo/glances:latest
+    container_name: glances
+    restart: unless-stopped
+    pid: host
+    environment:
+      - "GLANCES_OPT=-w"
+    volumes:
+     - ./config/glances.conf:/etc/glances.conf
+     - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "61208-61209:61208-61209"
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------

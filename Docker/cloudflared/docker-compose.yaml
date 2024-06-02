@@ -1,0 +1,20 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Cloudflared
+# -----------------------------------------------------------------------------------------------------
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+    command: tunnel run
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Argentina/Buenos_Aires
+      - CLI_ARGS= #optional
+      - TUNNEL_TOKEN=${TOKEN}
+    volumes:
+      - ./tunnel:/etc/cloudflared
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
