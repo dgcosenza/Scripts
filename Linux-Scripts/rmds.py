@@ -1,7 +1,8 @@
 # --------------------------------------------------------------------------
-# This Python script presents a menu for launching various tools, including updaters, cleaners, and fixers.
-# Users can select options by entering corresponding numbers.
+# This Python script prompts the user to enter a directory where they want to execute a command.
+# It then offers to delete the ._* and .DS_Store files within the specified directory upon user confirmation.
 # --------------------------------------------------------------------------
+
 import os
 
 # Ask the user for the directory in which they want to execute the command
