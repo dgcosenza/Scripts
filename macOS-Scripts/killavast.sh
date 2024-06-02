@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # --------------------------------------------------------------------------
-# Script to disable certain components of Avast antivirus on macOS
+# Script to disable Avast antivirus components, including Avast DNS, to enable custom DNS settings for browsing.
+# This script disables certain components of Avast antivirus on macOS to allow users to navigate with their preferred DNS settings.
 # --------------------------------------------------------------------------
 
 # Disable Avast Mail Shield component
