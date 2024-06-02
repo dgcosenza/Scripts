@@ -12,7 +12,7 @@ Write-Host "----------------------------------------------"
 # --------------------------------------------------------------------------
 Write-Host
 Write-Host "----------------------------------------------"
-Write-Host "ABRIENDO BATTLE.NET"
+Write-Host "OPENING BATTLE.NET"
 Write-Host "----------------------------------------------"
 Start-Process "C:\Program Files (x86)\Battle.net\Battle.net.exe"
 
@@ -21,7 +21,7 @@ Start-Process "C:\Program Files (x86)\Battle.net\Battle.net.exe"
 # --------------------------------------------------------------------------
 Write-Host
 Write-Host "----------------------------------------------"
-Write-Host "ABRIENDO STEAM"
+Write-Host "OPENING STEAM"
 Write-Host "----------------------------------------------"
 Start-Process "C:\Program Files (x86)\Steam\Steam.exe"
 
@@ -30,7 +30,7 @@ Start-Process "C:\Program Files (x86)\Steam\Steam.exe"
 # --------------------------------------------------------------------------
 Write-Host
 Write-Host "----------------------------------------------"
-Write-Host "ABRIENDO UPLAY"
+Write-Host "OPENING UPLAY"
 Write-Host "----------------------------------------------"
 Start-Process "C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\Uplay.exe"
 
@@ -39,7 +39,7 @@ Start-Process "C:\Program Files (x86)\Ubisoft\Ubisoft Game Launcher\Uplay.exe"
 # --------------------------------------------------------------------------
 Write-Host
 Write-Host "----------------------------------------------"
-Write-Host "ABRIENDO ORIGIN"
+Write-Host "OPENING ORIGIN"
 Write-Host "----------------------------------------------"
 Start-Process "C:\Program Files (x86)\Origin\Origin.exe"
 
@@ -47,7 +47,7 @@ Start-Process "C:\Program Files (x86)\Origin\Origin.exe"
 # Open Epic Games Launcher
 # --------------------------------------------------------------------------
 Write-Host "----------------------------------------------"
-Write-Host "ABRIENDO EPIC GAMES LAUNCHER"
+Write-Host "OPENING EPIC GAMES LAUNCHER"
 Write-Host "----------------------------------------------"
 Start-Process "C:\Program Files (x86)\Epic Games\Launcher\Engine\Binaries\Win64\EpicGamesLauncher.exe"
 
@@ -56,7 +56,7 @@ Start-Process "C:\Program Files (x86)\Epic Games\Launcher\Engine\Binaries\Win64\
 # --------------------------------------------------------------------------
 Write-Host
 Write-Host "----------------------------------------------"
-Write-Host "ABRIENDO TWITCH"
+Write-Host "OPENING TWITCH"
 Write-Host "----------------------------------------------"
 Start-Process "C:\Users\dgcosenza\AppData\Roaming\Twitch\Bin\Twitch.exe"
 Write-Host
