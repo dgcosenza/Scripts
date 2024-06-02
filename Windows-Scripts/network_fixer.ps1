@@ -1,3 +1,8 @@
+# --------------------------------------------------------------------------
+# This script performs network troubleshooting tasks such as releasing and
+# renewing the IP address, flushing DNS cache, and managing the Printer Spooler service.
+# --------------------------------------------------------------------------
+
 # Display a title
 Write-Host
 Write-Host "----------------------------------------------"
