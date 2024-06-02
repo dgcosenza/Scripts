@@ -113,6 +113,13 @@ cd ../nginx
 sudo docker-compose stop && sudo docker rm nginx && sudo docker rm mariadb3 && sudo docker rm mariadb4 && sudo docker-compose up -d --remove-orphans
 
 echo ""
+echo "${YELLOW}Updating NGiNX Proxy Manager Settings${NOCOLOR}"
+echo ""
+
+cd ../nginx-proxy-manager
+sudo docker-compose stop && sudo docker rm nginx-proxy-manager-app && sudo docker rm nginx-proxy-manager-db && sudo docker-compose up -d --remove-orphans
+
+echo ""
 echo "${YELLOW}Updating OpenSpeedTest Settings${NOCOLOR}"
 echo ""
 
