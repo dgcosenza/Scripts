@@ -1,0 +1,20 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# SmokePing
+# -----------------------------------------------------------------------------------------------------
+  smokeping:
+    image: lscr.io/linuxserver/smokeping:latest
+    container_name: smokeping
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Argentina/Buenos_Aires
+    volumes:
+      - ./config:/config
+      - ./data:/data
+    ports:
+      - 8060:80
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
