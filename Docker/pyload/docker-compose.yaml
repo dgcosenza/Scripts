@@ -1,0 +1,21 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# pyLoad
+# -----------------------------------------------------------------------------------------------------
+  pyload:
+    image: linuxserver/pyload-ng:latest
+    container_name: pyload
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Argentina/Buenos_Aires
+    volumes:
+      - ./config:/config
+      - ./downloads:/downloads
+    ports:
+      - 8001:8000
+      - 7227:7227 #optional
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
