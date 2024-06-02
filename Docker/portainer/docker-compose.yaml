@@ -1,0 +1,19 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Portainer CE
+# -----------------------------------------------------------------------------------------------------
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - ./config/portainer-data:/data
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - 9000:9000
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
