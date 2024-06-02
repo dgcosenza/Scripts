@@ -1,19 +1,24 @@
 #!/bin/bash
 
-# Obtener el directorio actual
+# --------------------------------------------------------------------------
+# This script optimizes all PDF files in the current directory with maximum compression.
+# It creates a folder named "compressed" if it doesn't exist and saves the optimized PDFs there.
+# --------------------------------------------------------------------------
+
+# Get the current directory
 current_dir="$(pwd)"
 dest_dir="$current_dir/compressed"
 
-# Crear la carpeta "compressed" si no existe
+# Create the "compressed" folder if it doesn't exist
 mkdir -p "$dest_dir"
 
-# Iterar sobre todos los archivos PDF en el directorio actual
+# Iterate over all PDF files in the current directory
 for file in "$current_dir"/*.pdf; do
-    # Obtener el nombre del archivo sin el directorio
+    # Get the filename without the directory
     filename=$(basename "$file")
     
-    # Optimizar el PDF con la máxima compresión
+    # Optimize the PDF with maximum compression
     pdfcpu optimize -mode=best "$file" "$dest_dir/$filename"
 done
 
-echo "Optimización por lotes completada."
+echo "Batch optimization completed."

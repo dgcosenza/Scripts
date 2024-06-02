@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # --------------------------------------------------------------------------
 # This script removes old revisions of snaps.
 # CLOSE ALL SNAPS BEFORE RUNNING THIS.
