@@ -1,0 +1,18 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# OpenSpeedTest
+# -----------------------------------------------------------------------------------------------------
+  speedtest:
+    image: openspeedtest/latest
+    container_name: openspeedtest
+    restart: unless-stopped
+    #environment:
+    #  - ENABLE_LETSENCRYPT=True
+    #  - DOMAIN_NAME=speedtest.yourdomain.com
+    #  - USER_EMAIL=you@yourdomain.pro
+    ports:
+      - '3000:3000'
+      - '3001:3001'
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------

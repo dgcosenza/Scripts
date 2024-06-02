@@ -1,0 +1,29 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Opera
+# -----------------------------------------------------------------------------------------------------
+  opera:
+    image: lscr.io/linuxserver/opera:latest
+    container_name: opera
+    restart: unless-stopped
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Argentina/Buenos_Aires
+      - OPERA_CLI=https://start.duckduckgo.com/ #optional
+      - DRINODE=/dev/dri/renderD128
+      - CUSTOM_USER=fnxusa
+      - PASSWORD=${PASSWORD}
+    volumes:
+      - ./config:/config
+    ports:
+      - 30004:3000
+      - 30014:3001
+    shm_size: "2gb"
+    devices:
+      - /dev/dri:/dev/dri
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
