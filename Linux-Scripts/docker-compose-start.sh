@@ -48,6 +48,9 @@ sudo docker-compose stop
 cd ../nginx
 sudo docker-compose stop
 
+cd ../nginx-proxy-manager
+sudo docker-compose stop
+
 cd ../openspeedtest
 sudo docker-compose stop
 
@@ -156,6 +159,9 @@ cd ../nextcloud
 sudo docker-compose start
 
 cd ../nginx
+sudo docker-compose start
+
+cd ../nginx-proxy-manager
 sudo docker-compose start
 
 cd ../openspeedtest
