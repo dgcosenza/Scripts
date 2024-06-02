@@ -1,0 +1,21 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# NGiNX
+# -----------------------------------------------------------------------------------------------------
+  nginx:
+    image: lscr.io/linuxserver/nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Argentina/Buenos_Aires
+      - DOCKER_MODS=linuxserver/mods:swag-auto-reload
+    volumes:
+      - ./config:/config
+    ports:
+      - 80:80
+      - 443:443
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------

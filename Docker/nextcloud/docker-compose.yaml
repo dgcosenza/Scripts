@@ -1,0 +1,40 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Nextcloud
+# -----------------------------------------------------------------------------------------------------
+  nextcloud:
+    image: lscr.io/linuxserver/nextcloud:latest
+    container_name: nextcloud
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Argentina/Buenos_Aires
+      - MYSQL_HOST=mariadb
+      - MYSQL_DATABASE=db_nextcloud
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - ./config:/config
+      - ./data:/data
+    ports:
+      - 8084:443
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
+# Nextcloud MariaDB
+# -----------------------------------------------------------------------------------------------------
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
+    restart: unless-stopped
+    #command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=db_nextcloud
+      - MYSQL_USER=${MYSQL_USER}
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
