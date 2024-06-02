@@ -1,6 +1,6 @@
-:: --------------------------------------------------------------------------
-:: This script blocks telemetry firewall rules to restrict communication with Microsoft telemetry servers.
-:: --------------------------------------------------------------------------
+# --------------------------------------------------------------------------
+# This script blocks telemetry firewall rules to restrict communication with Microsoft telemetry servers.
+# --------------------------------------------------------------------------
 
 Set-NetFirewallProfile -all
 
