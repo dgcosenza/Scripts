@@ -18,5 +18,5 @@ This repository contains scripts to block telemetry-related network requests on 
 Clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/dgcosenza/telemetry-blocking-firewall-rules.git
-cd telemetry-blocking-firewall-rules
+git clone https://github.com/dgcosenza/Scripts.git
+cd Scripts/Windows-Scripts/block_telemetry
