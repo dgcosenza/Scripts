@@ -1,0 +1,15 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# RetroArch
+# -----------------------------------------------------------------------------------------------------
+  retroarch:
+    image: inglebard/retroarch-web-nightly:latest
+    container_name: retroarch
+    restart: unless-stopped
+    volumes:
+      - ./roms:/var/www/html/assets/cores/
+    ports:
+      - 81:80
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------

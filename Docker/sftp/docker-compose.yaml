@@ -1,0 +1,18 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# SFTP
+# -----------------------------------------------------------------------------------------------------
+  sftp:
+    image: atmoz/sftp:latest
+    container_name: sftp
+    restart: unless-stopped
+    environment:
+      - SFTP_USERS=fnxusa:${SFTP_PASSWORD}:1000
+    volumes:
+#      - /home/fnxusa/docker/lets-encrypt/config/www:/home/fnxusa/public_html
+      - ./upload:/home/fnxusa/upload/
+    ports:
+      - "2222:22"
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
