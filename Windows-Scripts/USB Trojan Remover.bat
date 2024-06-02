@@ -1,3 +1,7 @@
+:: --------------------------------------------------------------------------
+:: This script is designed to remove common trojans and malicious files from USB drives.
+:: --------------------------------------------------------------------------
+
 @echo off 
 title USB TROJAN REMOVER by FNX-USA
 :: color 1E
