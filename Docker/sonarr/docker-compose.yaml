@@ -1,0 +1,23 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Sonarr
+# -----------------------------------------------------------------------------------------------------
+  sonarr:
+    image: linuxserver/sonarr:latest
+    container_name: sonarr
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Argentina/Buenos_Aires
+      - UMASK_SET=022 #optional
+    volumes:
+      - ./config:/config
+      - ./downloads:/downloads
+      - ./tv:/tv
+    ports:
+      - 8086:8989
+      - 9898:9898
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------

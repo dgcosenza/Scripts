@@ -1,0 +1,19 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# The Lounge
+# -----------------------------------------------------------------------------------------------------
+  thelounge:
+    image: linuxserver/thelounge:latest
+    container_name: thelounge
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Argentina/Buenos_Aires
+    volumes:
+      - ./config:/config
+    ports:
+      - 9001:9000
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------

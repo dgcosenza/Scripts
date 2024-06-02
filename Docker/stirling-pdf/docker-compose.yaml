@@ -1,0 +1,21 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Stirling PDF
+# -----------------------------------------------------------------------------------------------------
+  stirling-pdf:
+    image: frooodle/s-pdf:latest
+    container_name: stirling-pdf
+    restart: unless-stopped
+    environment:
+      - DOCKER_ENABLE_SECURITY=true
+      - SECURITY_ENABLE_LOGIN=true
+    volumes:
+      - ./trainingData:/usr/share/tesseract-ocr/5/tessdata #Required for extra OCR languages
+      - ./extraConfigs:/configs
+      - ./customFiles:/customFiles/
+      - ./logs:/logs/
+    ports:
+      - '8035:8080'
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
