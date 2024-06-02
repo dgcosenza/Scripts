@@ -1,3 +1,8 @@
+:: --------------------------------------------------------------------------
+:: This batch script presents a menu for launching various tools, including updaters, cleaners, and fixers.
+:: Users can select options by entering corresponding numbers.
+:: --------------------------------------------------------------------------
+
 @echo off
 mode con: cols=140  lines=35
 :z
