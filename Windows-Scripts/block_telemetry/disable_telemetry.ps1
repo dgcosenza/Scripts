@@ -5,10 +5,10 @@
 # --------------------------------------------------------------------------
 
 # Stop and disable telemetry-related services
-sc stop DiagTrack
-sc stop dmwappushservice
-sc config DiagTrack start= disabled
-sc config dmwappushservice start= disabled
+Stop-Service -Name "DiagTrack" -Force
+Stop-Service -Name "dmwappushservice" -Force
+Set-Service -Name "DiagTrack" -StartupType Disabled
+Set-Service -Name "dmwappushservice" -StartupType Disabled
 
 # Disable scheduled tasks related to telemetry
 schtasks /Change /TN "Microsoft\Windows\Customer Experience Improvement Program\Consolidator" /Disable
