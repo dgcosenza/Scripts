@@ -1,0 +1,29 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Dockurr Windows 11 VM
+# -----------------------------------------------------------------------------------------------------
+  windows:
+    image: dockurr/windows
+    container_name: windows11
+    restart: unless-stopped
+    devices:
+      - /dev/kvm
+      - /dev/dri:/dev/dri
+    cap_add:
+      - NET_ADMIN
+    environment:
+#      VERSION: "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.5.0-amd64-netinst.iso"
+      VERSION: "win11"
+      RAM_SIZE: "4G"
+      CPU_CORES: "2"
+      GPU: "Y"
+    volumes:
+      - ./storage:/storage
+      - "./storage/shared:/storage/shared"
+    ports:
+      - 8006:8006
+      - 3389:3389/tcp
+      - 3389:3389/udp
+    stop_grace_period: 2m
+# -----------------------------------------------------------------------------------------------------
