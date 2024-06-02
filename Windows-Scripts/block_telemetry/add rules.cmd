@@ -1,3 +1,13 @@
+# --------------------------------------------------------------------------
+# This script sets up firewall rules to block telemetry data.
+# It prompts the user to confirm the User Account Control (UAC) prompt
+# and then runs a PowerShell script with elevated privileges to add
+# the necessary firewall rules. After the rules are added, it displays
+# a message indicating that the rules should now be included in the
+# firewall configuration. Finally, it pauses to keep the window open
+# for the user to see the output.
+# --------------------------------------------------------------------------
+
 @echo off
 cls
 echo Block Telemetry Firewall Rules 
