@@ -1,0 +1,22 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# Uptime Kuma
+# -----------------------------------------------------------------------------------------------------
+  uptimekuma:
+    image: louislam/uptime-kuma:latest
+    container_name: uptime-kuma
+    restart: unless-stopped
+    cpu_shares: 90
+    deploy:
+      resources:
+        limits:
+          memory: 15928M
+        reservations:
+          memory: "134217728"
+    ports:
+      - 3030:3001/tcp
+    volumes:
+      - ./data:/app/data
+    network_mode: "nginx-proxy-manager_npm"
+# -----------------------------------------------------------------------------------------------------
