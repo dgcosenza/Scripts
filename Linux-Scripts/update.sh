@@ -78,6 +78,10 @@ echo "${YELLOW}Looking for Jackett Updates${NOCOLOR}"
 echo ""
 sudo docker pull lscr.io/linuxserver/jackett:latest &&
 echo ""
+echo "${YELLOW}Looking for Memos Updates${NOCOLOR}"
+echo ""
+sudo docker pull neosmemo/memos:latest &&
+echo ""
 echo "${YELLOW}Looking for Minecraft Server Updates${NOCOLOR}"
 echo ""
 sudo docker pull itzg/minecraft-server:latest &&
@@ -179,11 +183,11 @@ echo "${YELLOW}Looking for WordPress Updates${NOCOLOR}"
 echo ""
 sudo docker pull wordpress:latest &&
 
-echo ""
-echo "${YELLOW}Remove Unused Docker Images and Volumes${NOCOLOR}"
-echo ""
-sudo docker image prune -af &&
-sudo docker volume prune -af &&
+#echo ""
+#echo "${YELLOW}Remove Unused Docker Images and Volumes${NOCOLOR}"
+#echo ""
+#sudo docker image prune -af &&
+#sudo docker volume prune -af &&
 
 # Update repo and system
 

@@ -78,6 +78,13 @@ cd ../jackett
 sudo docker-compose stop && sudo docker rm jackett && sudo docker-compose up -d --remove-orphans
 
 echo ""
+echo "${YELLOW}Updating Memos Settings${NOCOLOR}"
+echo ""
+
+cd ../memos
+sudo docker-compose stop && sudo docker rm memos && sudo docker-compose up -d --remove-orphans
+
+echo ""
 echo "${YELLOW}Updating Minecraft Server Settings${NOCOLOR}"
 echo ""
 
@@ -243,7 +250,7 @@ echo "${YELLOW}Updating Windows 11 Settings${NOCOLOR}"
 echo ""
 
 cd ../windows
-sudo docker-compose stop && sudo docker rm windows && sudo docker-compose up -d --remove-orphans
+sudo docker-compose stop && sudo docker rm windows11 && sudo docker-compose up -d --remove-orphans
 
 echo ""
 echo "${YELLOW}Updating WordPress Settings${NOCOLOR}"

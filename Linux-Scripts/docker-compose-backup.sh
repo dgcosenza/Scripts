@@ -35,6 +35,9 @@ sudo docker-compose stop
 cd ../jackett
 sudo docker-compose stop
 
+cd ../memos
+sudo docker-compose stop
+
 cd ../minecraft-server
 sudo docker-compose stop
 
@@ -145,6 +148,9 @@ cd ../holoplay
 sudo docker-compose start
 
 cd ../jackett
+sudo docker-compose start
+
+cd ../memos
 sudo docker-compose start
 
 cd ../minecraft-server
