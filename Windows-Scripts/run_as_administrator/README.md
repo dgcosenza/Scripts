@@ -20,4 +20,4 @@ Clone this repository to your local machine using the following command:
 
 ```bash
 git clone https://github.com/dgcosenza/Scripts.git
-cd Scripts/Windows-Scripts/context_menu_ps1
+cd Scripts/Windows-Scripts/run_as_administrator
