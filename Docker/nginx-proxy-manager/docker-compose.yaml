@@ -1,0 +1,43 @@
+services:
+
+# -----------------------------------------------------------------------------------------------------
+# NGINX Proxy Manager
+# -----------------------------------------------------------------------------------------------------
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginx-proxy-manager-app
+    restart: unless-stopped
+    environment:
+      DB_MYSQL_HOST: "db"
+      DB_MYSQL_PORT: 3306
+      DB_MYSQL_USER: "fnxusa"
+      DB_MYSQL_PASSWORD: "testingpassword"
+      DB_MYSQL_NAME: "fnxusa_npm"
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    ports:
+      - '8022:80'
+      - '8122:81'
+      - '2443:443'
+    networks:
+      - npm
+    depends_on:
+      - db
+  db:
+    image: 'jc21/mariadb-aria:latest'
+    container_name: nginx-proxy-manager-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 'testingpassword'
+      MYSQL_DATABASE: 'fnxusa_npm'
+      MYSQL_USER: 'fnxusa'
+      MYSQL_PASSWORD: 'testingpassword'
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - npm
+# -----------------------------------------------------------------------------------------------------
+
+networks:
+  npm:
