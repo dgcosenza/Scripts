@@ -1,0 +1,41 @@
+# --------------------------------------------------------------------------
+# This list of aliases sets up several convenient aliases for terminal commands.
+# These aliases are designed to simplify common tasks such as listing directories,
+# clearing the screen, managing Docker resources, and more.
+# --------------------------------------------------------------------------
+
+# Set alias to clear the terminal screen
+alias c='clear'
+
+# Set alias to list directory contents in a detailed format with human-readable sizes
+alias ll='ls -lsahF'
+
+# Set alias to list directory contents using 'exa' with icons and human-readable sizes
+alias lle='exa --icons -lahFgH --group-directories-first'
+
+# Set alias to list all directory contents, including hidden files
+alias la='ls -A'
+
+# Set alias to list directory contents in a columnar format
+alias l='ls -CF'
+
+# Set alias to run a Python script with sudo
+alias rmds='sudo python3 ~/rmds.py'
+
+# Set alias to use 'batcat' as 'bat'
+alias bat='batcat'
+
+# Set alias to update the system and check running Docker containers
+alias u='sudo sh update.sh && sudo sh update.sh && sudo py docker-containers-running.py'
+
+# Set alias to exit the terminal
+alias e='exit'
+
+# Set alias for copying to clipboard using 'xclip'
+alias pbcopy='xclip -selection clipboard'
+
+# Set alias for pasting from clipboard using 'xclip'
+alias pbpaste='xclip -selection clipboard -o'
+
+# Set alias to prune Docker images, volumes, and networks
+alias dkp='docker image prune -f && docker volume prune -f && docker network prune -f'
