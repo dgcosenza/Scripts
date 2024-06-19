@@ -1,4 +1,5 @@
 #!/bin/bash
+
 cd /home/fnxusa/docker/
 
 # Stop Containers

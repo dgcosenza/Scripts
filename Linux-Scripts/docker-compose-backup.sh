@@ -1,4 +1,5 @@
 #!/bin/bash
+
 backupDate=$(date  +'%F')
 echo $backupDate
 cd /home/fnxusa/docker/

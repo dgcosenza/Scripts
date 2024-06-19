@@ -1,9 +1,12 @@
+#!/bin/bash
+
 # --------------------------------------------------------------------------
 # This script performs a series of system package management tasks on a Debian-based system.
 # It updates the package lists, upgrades installed packages, removes unnecessary packages,
 # cleans package cache, and performs additional system cleanup using aptitude.
 # --------------------------------------------------------------------------
 
+# Clear the terminal screen for better readability
 clear
 
 # Update package lists and upgrade installed packages using apt-get
