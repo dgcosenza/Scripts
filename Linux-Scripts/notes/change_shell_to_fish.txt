@@ -1,0 +1,13 @@
+# --------------------------------------------------------------------------
+# Display the current shell that is active for the user.
+# This command prints out the path to the current shell executable.
+# --------------------------------------------------------------------------
+
+echo $SHELL
+
+# --------------------------------------------------------------------------
+# Change the default shell for the user to Fish Shell (/usr/bin/fish).
+# This command modifies the user's login shell configuration to Fish Shell.
+# --------------------------------------------------------------------------
+
+chsh -s /usr/bin/fish

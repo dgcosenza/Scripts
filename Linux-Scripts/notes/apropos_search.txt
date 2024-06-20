@@ -1,0 +1,11 @@
+# --------------------------------------------------------------------------
+# This script uses the `apropos` command to search the manual page names and
+# descriptions for instances of the keyword 'secure file copy'. It provides 
+# an easy way to find commands related to secure file copying.
+# --------------------------------------------------------------------------
+
+# Clear the screen
+clear
+
+# Search for commands related to 'secure file copy'
+apropos 'secure file copy'

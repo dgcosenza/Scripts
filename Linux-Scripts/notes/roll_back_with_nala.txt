@@ -1,0 +1,16 @@
+# --------------------------------------------------------------------------
+# This script provides a method to roll back recent package installations
+# using Nala and perform system cleanup using Nala commands.
+# --------------------------------------------------------------------------
+
+# View the history of recent transactions with Nala
+sudo nala history
+
+# Undo the specific transaction identified by its ID (e.g., 5)
+sudo nala history undo 5
+
+# Remove unnecessary packages and their configurations using Nala
+sudo nala autoremove --purge
+
+# Clean up the local repository of retrieved package files using Nala
+sudo nala clean
